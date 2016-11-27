@@ -6,15 +6,18 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'space-around',
         backgroundColor: '#F5FCFF',
     },
-    button: {
-        backgroundColor: 'red',
-        width:70,
-        paddingTop: 20,
-        paddingBottom: 20,
+    image: {
+        paddingTop: 520,
+    },
+    buttons: {
+        marginBottom: 10,
+        marginTop: 20,
+        padding: 50,
     },
     welcome: {
         fontSize: 23,
