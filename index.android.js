@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Button,
+  Text,
+  ScrollView,
   View
 } from 'react-native';
 
@@ -9,36 +11,33 @@ import {
   // Button
 // } from 'react-native-elements'
 
+import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
+import Restaurant from './views/restaurants';
+import RestaurantDetails from './views/restaurants_details';
+
 var styles = require('./assets/style');
 
 export default class breakfastapp extends Component {
 
   constructor(props) {
       super(props);
-      this.renderRestaurantsOrder = this.renderRestaurantsOrder.bind(this);
-  }
-
-  renderRestaurantsOrder() {
-    this.props.navigator.push({
-      title: 'restaurants',
-      component: require('./views/view.js')
-    });
   }
 
   render() {
     return (
-      <View style={styles.container}>
-          <Button
-            title="اطلب من المحل"
-            onPress={() => this.renderRestaurantsOrder()}
-          />
+        <ScrollableTabView
+            initialPage={0}
+            renderTabBar={() => <ScrollableTabBar />}
+        >
+            <ScrollView tabLabel='أماكن أكل'>
+               <Restaurant />
+            </ScrollView>
 
-          <Button
-            title="بيانات"
-            onPress={() => this.renderRestaurantsOrder()}
-          />
+            <ScrollView tabLabel='دخل مطعم'>
+                <RestaurantDetails />
+            </ScrollView>
 
-      </View>
+        </ScrollableTabView>
     );
   }
 }

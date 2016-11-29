@@ -5,11 +5,11 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
+        padding:20,
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-around',
-        backgroundColor: '#F5FCFF',
+        justifyContent: 'center',
     },
     image: {
         paddingTop: 520,
